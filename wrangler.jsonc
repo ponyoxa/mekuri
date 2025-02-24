@@ -9,7 +9,20 @@
 	"compatibility_date": "2025-02-14",
 	"observability": {
 		"enabled": true
-	}
+	},
+
+  "env": {
+    "dev": {
+      "triggers": {
+        "crons": [
+          "0 20 * * tue",
+          "45 20 * * tue",
+          "0 21 * * tue"
+        ]
+      }
+    }
+  },
+
   /**
    * Smart Placement
    * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
@@ -27,7 +40,10 @@
    * Environment Variables
    * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
    */
-  // "vars": { "MY_VARIABLE": "production_value" },
+  "vars":{
+    "DISCORD_TOKEN": "production_value",
+    "DISCORD_GUILD_ID": "production_value"
+  }
   /**
    * Note: Use secrets to store sensitive data.
    * https://developers.cloudflare.com/workers/configuration/secrets/

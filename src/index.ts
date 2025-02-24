@@ -1,18 +1,39 @@
-/**
- * Welcome to Cloudflare Workers! This is your first worker.
- *
- * - Run `npm run dev` in your terminal to start a development server
- * - Open a browser tab at http://localhost:8787/ to see your worker in action
- * - Run `npm run deploy` to publish your worker
- *
- * Bind resources to your worker in `wrangler.jsonc`. After adding bindings, a type definition for the
- * `Env` object can be regenerated with `npm run cf-typegen`.
- *
- * Learn more at https://developers.cloudflare.com/workers/
- */
+export interface Env {
+	DISCORD_TOKEN: string
+	DISCORD_GUILD_ID: string
+}
+
 
 export default {
-	async fetch(request, env, ctx): Promise<Response> {
-		return new Response('Hello World!');
+	async scheduled (
+		controller:ScheduledController,
+		env:Env,
+		ctx:ExecutionContext,
+	){
+		switch(controller.cron){
+		case"0 20 * * tue":
+			await startMessage()
+			break
+		case"45 20 * * tue":
+			await summaryMessage()
+			break
+		case"0 21 * * tue":
+			await finishMessage()
+			break
+		}
+		console.log("cron processed")
 	},
-} satisfies ExportedHandler<Env>;
+}
+
+
+function startMessage() {
+	throw new Error("Function not implemented.")
+}
+
+function summaryMessage() {
+	throw new Error("Function not implemented.")
+}
+
+function finishMessage() {
+	throw new Error("Function not implemented.")
+}
