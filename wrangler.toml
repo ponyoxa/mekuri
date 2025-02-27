@@ -1,1 +1,12 @@
+name = "mekuri",
 main = "./src/index.ts"
+compatibility_date = "2025-02-27"
+
+[observability]
+enabled = true
+head_sampling_rate = 0.1
+
+[triggers]
+crons = ["0 20 * * tue",
+          "45 20 * * tue",
+          "0 21 * * tue"]
