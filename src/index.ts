@@ -14,6 +14,9 @@ export default {
 			case "0 21 * * *":
 				await finishMessage(env)
 				break
+			default:
+				await helloMessage(env)
+				break
 		}
 		console.log("cron processed")
 	},
@@ -47,5 +50,10 @@ async function summaryMessage(env: Env) {
 
 async function finishMessage(env: Env) {
 	const message = "終了メッセージです"
+	await sendDiscordMessage(message, env)
+}
+
+async function helloMessage(env: Env) {
+	const message = "Hello, World!"
 	await sendDiscordMessage(message, env)
 }
