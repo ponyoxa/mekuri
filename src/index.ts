@@ -17,8 +17,10 @@ export default {
 		}
 		console.log("cron processed")
 	},
+	async fetch (request: Request) {
+		return new Response("This worker is for scheduled events only", { status: 200 })
+	},
 }
-
 async function sendDiscordMessage(message: string, env: Env) {
 	const url = env.WEBHOOK_URL
 	const payload = {
