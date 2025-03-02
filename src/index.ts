@@ -5,13 +5,13 @@ export interface Env {
 export default {
 	async scheduled (controller: ScheduledController, env: Env, ctx: ExecutionContext) {
 		switch (controller.cron) {
-			case "0 11 * * *":
+			case "0 11 * * tue":
 				await startMessage(env)
 				break
-			case "45 11 * * *":
+			case "45 11 * * tue":
 				await summaryMessage(env)
 				break
-			case "0 12 * * *":
+			case "0 12 * * tue":
 				await finishMessage(env)
 				break
 			default:
