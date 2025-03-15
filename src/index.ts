@@ -54,6 +54,6 @@ async function finishMessage(env: Env) {
 }
 
 async function helloMessage(env: Env) {
-	const message = "Hello, World!\nHello, Joshi.ts!"
+	const message = "Hello, World!\nHello, Joshi.ts!\n\N{Star} Tuesday Reading Time Start \N{Star}"
 	await sendDiscordMessage(message, env)
 }
