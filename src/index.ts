@@ -54,6 +54,6 @@ async function finishMessage(env: Env) {
 }
 
 async function helloMessage(env: Env) {
-	const message = "Hello, World!\nHello, Joshi.ts!\n🌟Tuesday Reading Time Start🌟\n🌟Tuesday Mokumoku Reading Time Start🌟\nEnjoy reading until 20:45...\nFinish mokumoku reading time!!\nLet's share what you read or learn🐤\nWell done!!\nContinuity is the father of success...\nSee you next Tuesday👋"
+	const message = "Hello, World!\nHello, Joshi.ts!"
 	await sendDiscordMessage(message, env)
 }
