@@ -39,17 +39,17 @@ async function sendDiscordMessage(message: string, env: Env) {
 }
 
 async function startMessage(env: Env) {
-	const message = "🌟Tuesday Mokumoku Reading Time Start🌟\nEnjoy reading until 20:45..."
+	const message = "🌟Tuesday Mokumoku Reading Time Start🌟\n20:45までもくもくタイム。今日は何読む？？"
 	await sendDiscordMessage(message, env)
 }
 
 async function summaryMessage(env: Env) {
-	const message = "Finish mokumoku reading time!!\nLet's share what you read or learn🐤"
+	const message = "Finish mokumoku reading time!!\n気づいたことや学びをシェアしよう🐤"
 	await sendDiscordMessage(message, env)
 }
 
 async function finishMessage(env: Env) {
-	const message = "Well done!!\nContinuity is the father of success...\nSee you next Tuesday👋"
+	const message = "Well done!!\n今日もありがとう！また来週👋"
 	await sendDiscordMessage(message, env)
 }
 
